@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile & Services - GRADENET</title>
+    <style>
+        /* Base Variables & Theme */
+        :root {
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --primary-color: #0284c7;
+            --primary-dark: #0369a1;
+            --border-color: #e2e8f0;
+        }
+
+        /* Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* Header Navigation */
+        .navbar {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-color);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Profile Container */
+        .post-container {
+            max-width: 800px;
+            padding-top: 40px;
+            padding-bottom: 60px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: var(--primary-color);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .post-header h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            line-height: 1.2;💕
+        }
+
+        .meta {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .post-cover {
+            margin: 20px 0 30px;
+            width: 100%;
+        }
+
+        .post-content h2 {
+            margin: 30px 0 15px;
+            color: var(--text-color);
+        }
+
+        .post-content p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .post-content .lead {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        /* Contact Details Callout Box */
+        .contact-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .contact-card ul {
+            list-style: none;
+        }
+
+        .contact-card li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 30px 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-info strong {
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">GRADE<span>NET</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="post.html" class="active">Company Profile</a></li>
+                    <li><a href="tel:07032886464">Call Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Post Content Container -->
+    <main class="container post-container">
+        <article class="post">
+            <a href="index.html" class="back-link">&larr; Return to home page
+            <header class="post-header">
+                <span class="tag">Corporate Overview</span>
+                <h1>GRADENET: Driving Technical Excellence & IT Innovation</h1>
+                <div class="meta">
+                    Official Firm Profile • Executive Leadership
+                </div>
+            </header>
+
+            <img class="post-cover" src="1.jpg">
+
+            <div class="post-content">
+                <p class="lead">GRADENET is a computer and information technology consultancy specializing in digital transformation, hardware lifecycle management, and network infrastructure setup.</p>
+
+                <h2>Our Strategic Objectives</h2>
+                <p>In an increasingly digital environment, organizations require technical systems that minimize downtime and scale on demand. GRADENET delivers end-to-end technical support, hardware supply, and custom software systems designed to match client operational goals.</p>
+
+                <!-- Direct Executive Contact Block -->
+                <div class="contact-card">
+                    <h3>Direct Corporate Contact</h3>
+                    <ul>
+                        <li><strong>Company Name:</strong> GRADENET</li>
+                        <li><strong>Chief Executive Officer:</strong> Mr. Timi Oyayemen</li>
+                        <li><strong>Direct Line:</strong> <a href="tel:07032886464">07032886464</a></li>
+                        <li><strong>Services:</strong> IT Consulting, Hardware Maintenance, Networking, Software Development</li>
+                    </ul>
+                </div>
+
+                <h2>Key Areas of Operation</h2>
+                <p>1. <strong>Systems Maintenance:</strong> Scheduled diagnostic routines, component upgrades, and hardware repair for business operations.</p>
+                <p>2. <strong>Network Deployment:</strong> Structured cabling, router configuration, LAN/WAN setup, and firewall deployment.</p>
+                <p>3. <strong>Technical Support Contracts:</strong> Dedicated, on-call technical assistance for enterprise environments.</p>
+
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80" alt="IT Consulting Session">
+
+                <h2>Get in Touch</h2>
+                <p>For inquiries regarding enterprise partnerships, hardware supplies, or IT consultations, reach out directly to <strong>Mr. Timi Oyayemen</strong> using the corporate phone contact provided above.</p>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2026 GRADENET. All rights reserved.</p>
+                <p>Leading Computer & IT Solutions Provider</p>
+            </div>
+            <div class="contact-info">
+                <p>CEO: <strong>Mr. Timi Oyayemen</strong></p>
+                <p>Direct Line: <a href="tel:07032886464"><strong>07032886464</strong></a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

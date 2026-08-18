@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVE NOTE</title>
+    <style>
+       <title>Love Notes</title>
+
+<style>
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            180deg,
+            #8d24e8 0%,
+            #9828e3 45%,
+            #c456c2 100%
+        );
+}
+
+
+
+.page {
+    position: relative;
+    min-height: 100vh;
+
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    overflow: hidden;
+}
+
+.marquee {
+    position: fixed;
+
+    z-index: 100;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    color: #fff;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+
+    background: transparent;
+}
+
+
+
+.marquee.top {
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+}
+
+.top .track {
+    display: flex;
+    width: max-content;
+
+    animation:
+        moveLeft 22s linear infinite;
+}
+
+
+
+.marquee.bottom {
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+}
+
+.bottom .track {
+    display: flex;
+    width: max-content;
+
+    animation:
+        moveRight 22s linear infinite;
+
+    transform: rotate(180deg);
+}
+
+
+
+.marquee.left {
+    top: 0;
+    left: 0;
+
+    width: 42px;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+}
+
+.left .track {
+    display: flex;
+
+    width: max-content;
+
+    animation:
+        moveUp 22s linear infinite;
+
+    transform:
+        rotate(-90deg)
+        translateX(-50%);
+}
+
+
+
+.marquee.right {
+    top: 0;
+    right: 0;
+
+    width: 42px;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+}
+
+.right .track {
+    display: flex;
+
+    width: max-content;
+
+    animation:
+        moveDown 22s linear infinite;
+
+    transform:
+        rotate(90deg)
+        translateX(-50%);
+}
+
+
+
+.marquee-text {
+    display: inline-block;
+
+    padding-right: 25px;
+
+    flex-shrink: 0;
+}
+
+.marquee-text::after {
+    content: " ♥ ";
+
+    color: #ff304f;
+
+    margin-left: 8px;
+}
+
+
+
+
+@keyframes moveLeft {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+@keyframes moveRight {
+
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+
+
+@keyframes moveUp {
+
+    from {
+        transform:
+            rotate(-90deg)
+            translateX(-50%);
+    }
+
+    to {
+        transform:
+            rotate(-90deg)
+            translateX(50%);
+    }
+
+}
+
+
+
+@keyframes moveDown {
+
+    from {
+        transform:
+            rotate(90deg)
+            translateX(-50%);
+    }
+
+    to {
+        transform:
+            rotate(90deg)
+            translateX(50%);
+    }
+
+}
+
+
+.floating-heart {
+    position: absolute;
+
+    color: #ff3150;
+
+    font-size: 18px;
+
+    animation:
+        float 5s ease-in-out infinite;
+
+    text-shadow:
+        0 3px 5px rgba(80, 0, 80, .2);
+}
+
+.heart-1 {
+    top: 20%;
+    right: 17%;
+
+    animation-delay: 0s;
+}
+
+.heart-2 {
+    top: 56%;
+    right: 16%;
+
+    animation-delay: 1s;
+}
+
+.heart-3 {
+    top: 59%;
+    left: 34%;
+
+    font-size: 11px;
+
+    animation-delay: 2s;
+}
+
+.heart-4 {
+    top: 82%;
+    right: 24%;
+
+    font-size: 12px;
+
+    animation-delay: 1.5s;
+}
+
+.heart-5 {
+    top: 61%;
+    left: 80%;
+
+    font-size: 10px;
+
+    animation-delay: 3s;
+}
+
+.heart-6 {
+    top: 71%;
+    left: 18%;
+
+    font-size: 12px;
+
+    animation-delay: 2.5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+
+
+.hero {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding:
+        90px 30px
+        50px;
+
+    text-align: center;
+}
+
+
+/* TITLE */
+
+.hero-title {
+
+    position: relative;
+
+    display: inline-block;
+
+    color: #ff946b;
+
+    font-size: 55px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    margin-bottom: 45px;
+
+    text-shadow:
+        0 4px 2px rgba(90, 20, 130, .3);
+}
+
+
+.hero-title::before {
+
+    content: "♡";
+
+    position: absolute;
+
+    left: -55px;
+    top: -15px;
+
+    color: #ff776d;
+
+    font-size: 43px;
+}
+
+
+.hero-title::after {
+
+    content: "♡";
+
+    position: absolute;
+
+    right: -55px;
+    top: 2px;
+
+    color: #ff776d;
+
+    font-size: 38px;
+}
+
+
+
+.hero-description {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color:
+        rgba(255,255,255,.78);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    font-weight: 500;
+}
+
+
+
+.content {
+
+    position: relative;
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    padding:
+        0 20px
+        100px;
+}
+
+
+
+.note {
+
+    position: relative;
+
+    margin-bottom: 55px;
+
+    padding:
+        40px 38px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(
+            205,
+            120,
+            220,
+            .40
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    box-shadow:
+        0 15px 40px
+        rgba(65, 0, 90, .18);
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+}
+
+
+
+.note h2 {
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 40px;
+
+    line-height: 1.2;
+
+    margin-bottom: 30px;
+
+    font-weight: 700;
+}
+
+
+
+.note h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 50px;
+
+    height: 3px;
+
+    margin:
+        13px auto
+        0;
+
+    border-radius: 20px;
+
+    background: #ff7c68;
+}
+
+
+
+
+.note p {
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            .84
+        );
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+
+    font-weight: 500;
+}
+
+.note p:last-child {
+    margin-bottom: 0;
+}
+
+
+.chat-button {
+
+    position: fixed;
+
+    z-index: 200;
+
+    right: 28px;
+    bottom: 25px;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f83261,
+            #ed326e
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(90, 0, 70, .25);
+}
+
+
+
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding-top: 100px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+    }
+
+    .hero-title::before,
+    .hero-title::after {
+        display: none;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .note {
+        padding: 30px 25px;
+    }
+
+    .note h2 {
+        font-size: 31px;
+    }
+
+    .note p {
+        font-size: 16px;
+    }
+
+    .marquee {
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+
+}
+
+
+
+
+@media (max-width: 450px) {
+
+    .marquee.top,
+    .marquee.bottom {
+        height: 34px;
+    }
+
+    .marquee.left,
+    .marquee.right {
+        width: 32px;
+    }
+
+    .page {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .hero {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .hero-title {
+        font-size: 34px;
+    }
+
+    .note h2 {
+        font-size: 27px;
+    }
+
+    .note p {
+        font-size: 15px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <div class="marquee top">
+
+        <div class="track">
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         BOTTOM MARQUEE
+    ================================================== -->
+
+    <div class="marquee bottom">
+
+        <div class="track">
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+   
+
+    <div class="marquee left">
+
+        <div class="track">
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+  
+    <div class="marquee right">
+
+        <div class="track">
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+            <span class="marquee-text">
+                The Moment I Knew
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    
+    <div class="floating-heart heart-1">♥</div>
+    <div class="floating-heart heart-2">♥</div>
+    <div class="floating-heart heart-3">♥</div>
+    <div class="floating-heart heart-4">♥</div>
+    <div class="floating-heart heart-5">♥</div>
+    <div class="floating-heart heart-6">♥</div>
+
+
+
+   
+    <section class="hero">
+
+        <h1 class="hero-title">
+            Love Notes
+        </h1>
+
+        <p class="hero-description">
+
+            Welcome to Love Notes, where words become whispers of the heart.
+            Send beautiful messages to your loved one that express the depth
+            of your feelings. Each section below contains heartfelt messages
+            you can share with that special someone.
+
+        </p>
+
+    </section>
+
+
+
+    
+    <main class="content">
+
+
+        <!-- THE MOMENT I KNEW -->
+
+        <article class="note">
+
+            <h2>
+                The Moment I Knew
+            </h2>
+
+            <p>
+
+                There was a moment when I looked at you and realized that you
+                were everything I had been searching for. Your smile, your
+                laugh, the way your eyes light up when you talk about things
+                you love - it all captivated me. I knew then that my heart had
+                found its home.
+
+            </p>
+
+           
+
+        </article>
+
+
+
+    
+
+
+    </main>
+
+
+
+    
+    <div class="chat-button">
+        ❤️'''
+    </div>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRADENET - Premier IT & Computer Solutions</title>
+    <style>
+        /* Base Variables & Theme */
+        :root {
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --primary-color: #0284c7; /* Tech Blue */
+            --primary-dark: #0369a1;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* Header Navigation */
+        .navbar {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-color);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--card-bg);
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        /* Services Grid */
+        .section-title {
+            margin: 40px 0 20px;
+            font-size: 1.8rem;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card img {
+            border-radius: 0;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .tag {
+            align-self: flex-start;
+            background-color: #e0f2fe;
+            color: var(--primary-color);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .card-body h3 {
+            margin-bottom: 10px;
+        }
+
+        .card-body h3 a {
+            color: var(--text-color);
+        }
+
+        .card-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        /* Executive Focus Section */
+        .executive-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 25px;
+            border-radius: 6px;
+            margin-bottom: 60px;
+        }
+
+        .executive-box h3 {
+            margin-bottom: 8px;
+        }
+
+        .executive-box p {
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 30px 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-info strong {
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">GRADE<span>NET</span></a>
+            <nav>
+                
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Enterprise IT Infrastructure & Digital Solutions</h1>
+            <p>GRADENET delivers high-performance network architecture, hardware maintenance, software engineering, and technical consultancy.</p>
+            <a href="page2.html" class="btn">Learn About Our Services</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- CEO Spotlight Banner -->
+        <section style="margin-top: 40px;">
+            <div class="executive-box">
+                <h3>Leadership & Vision</h3>
+                <p>Under the leadership of Executive Director & CEO <strong>Mr. Timi Oyayemen</strong>, GRADENET provides enterprise technology services built on reliability, speed, and modern engineering standards.</p>
+            </div>
+        </section>
+
+        <!-- Services / Insights Grid -->
+        <h2 class="section-title">Core IT Capabilities</h2>
+        <div class="posts-grid">
+
+            <!-- Card 1 -->
+            <article class="card">
+                <img src="1.JPG" alt="Network Servers">
+                <div class="card-body">
+                    <span class="tag">Infrastructure</span>
+                    <h3><a href="page2.html">Network Architecture & Systems Integration</a></h3>
+                    <p>Designing and deploying robust wired and wireless networks tailored to secure organizational data traffic.</p>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <img src="2.jpg">
+                <div class="card-body">
+                    <span class="tag">Software</span>
+                    <h3><a href="page2.html">Custom Software & Web Engineering</a></h3>
+                    <p>Building bespoke portal management systems, database architectures, and digital productivity platforms.</p>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <img src="3.jpg">
+                <div class="card-body">
+                    <span class="tag">Maintenance</span>
+                    <h3><a href="page2.html">Computer Systems Maintenance & Procurement</a></h3>
+                    <p>End-to-end hardware diagnostics, preventive maintenance contracts, and IT equipment sourcing.</p>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2026 GRADENET. All rights reserved.</p>
+                <p>Leading Computer & IT Solutions Provider</p>
+            </div>
+            <div class="contact-info">
+                <p>CEO: <strong>Mr. Timi Oyayemen</strong></p>
+                <p>Direct Line: <a href="tel:0703886464"><strong>07032886464</strong></a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
